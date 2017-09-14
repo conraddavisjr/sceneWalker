@@ -1,0 +1,37 @@
+@import '../../node_modules/play-web-core/sass/main'
+// @import '../../node_modules/play-web-core/sass/debug'
+
+$cube-width: 400px;
+$cube-height: 400px;
+
+#environment
+  -webkit-perspective: 1000px
+  perspective: 1000px
+  position: fixed
+  background-color: #1b1b1b;
+  height: 100vh
+  width: 100%
+
+.character
+  position: absolute
+  height: 150px
+  width: 90px
+  top: 250px
+  background-color: gray
+
+.ground
+  position: absolute
+  top: 400px
+  width: 100%
+  height: 20px
+  background-color: green
+
+.mountainSvg
+  height: 200px
+  top: 200px;
+  position: absolute;
+  width: 100%
+  z-index: -1
+
+.second
+  transform: translateX(100%)

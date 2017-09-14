@@ -1,0 +1,58 @@
+env:
+  browser: true
+  commonjs: true
+  es6: true
+
+extends: eslint:recommended
+
+parserOptions:
+  sourceType: module
+
+rules:
+  indent:
+    - error
+    - 2
+
+  linebreak-style:
+    - error
+    - unix
+
+  quotes:
+    - error
+    - single
+
+  semi:
+    - error
+    - never
+
+globals:
+  TweenMax: true
+  TweenLite: true
+  TimelineLite: true
+  TimelineMax: true
+  Back: true
+  Bounce: true
+  Circ: true
+  Cubic: true
+  CustomBounce: true
+  CustomEase: true
+  CustomWiggle: true
+  Ease: true
+  EaseLookup: true
+  Elastic: true
+  Expo: true
+  Linear: true
+  Power0: true
+  Power1: true
+  Power2: true
+  Power3: true
+  Power4: true
+  Quad: true
+  Quart: true
+  Quint: true
+  Sine: true
+  Strong: true
+  RoughEase: true
+  SlowMo: true
+  SteppedEase: true
+  ScrollMagic: true
