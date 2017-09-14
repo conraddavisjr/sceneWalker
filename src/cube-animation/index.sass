@@ -1,15 +1,15 @@
 @import '../../node_modules/play-web-core/sass/main'
 // @import '../../node_modules/play-web-core/sass/debug'
 
-$cube-width: 400px;
-$cube-height: 400px;
+$cube-width: 400px
+$cube-height: 400px
 
 #environment
   -webkit-perspective: 1000px
   perspective: 1000px
   position: fixed
-  background-color: #1b1b1b;
-  height: 100vh
+  background-color: #1b1b1b
+  height: 200vh
   width: 100%
 
 .character
@@ -17,6 +17,7 @@ $cube-height: 400px;
   height: 150px
   width: 90px
   top: 250px
+  transform-origin: bottom;
   background-color: gray
 
 .ground
@@ -25,14 +26,52 @@ $cube-height: 400px;
   width: 100%
   height: 20px
   background-color: green
+  &:after
+    content: ''
+    display: block
+    position: relative
+    width: 100%
+    top: 19px
+    height: 100px
+    background-color: #56230f
+
+.mountainContainer
+  height: 410px
+  width: 100%
+  overflow: hidden
 
 .mountainSvg
   height: 200px
-  top: 200px;
-  position: absolute;
-  width: 100%
+  top: 200px
+  width: 140vw
+  position: absolute
   transform: scale(2)
   z-index: -1
 
-.second
-  transform: translateX(100%)
+.comet
+  width: 90px
+  height: 90px
+  border-radius: 50%
+  transform: translateX(60vw)
+  background-color: rgb(243, 242, 240)
+
+.alertIcon
+  opacity: 0
+  width: auto
+  height: 70px
+  position: absolute
+  right: 13px
+  top: -80px
+
+.groundImpact
+  position: absolute
+  width: 170px
+  left: 57vw
+  top: -37px
+  opacity: 0
+
+.brokenGround
+  position: absolute
+  height: 20px
+  left: 44vw
+
