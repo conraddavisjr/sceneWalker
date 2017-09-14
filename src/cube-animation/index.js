@@ -38,7 +38,7 @@ var controller = new ScrollMagic.Controller();
 // build tween1
 var tween1 = new TimelineMax();
 tween1.to(character, 1, { transform:"translateX(calc(10vw))" })
-tween1.to(mountain, 1, { transform:"translateX(-40vw)" }, "-=1");
+tween1.to(mountain, 1, { x:'-100vw' }, "-=1");
 
 
 var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 2000 })
