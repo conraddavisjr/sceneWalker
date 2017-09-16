@@ -1,7 +1,0 @@
-const alertIcon = `
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.5 28.5">
-		<style>.st1{fill:#E51313;stroke:#000000;stroke-width:0.5;stroke-miterlimit:10;}</style>
-		<g id="Layer_2"><path class="st1" d="M7.7 1.5l7.9 1.4-9.8 20.6-3.3-.9zM2.3 23.5l2.9.8L4 27l-3.1-.8z"/></g>
-	</svg>`;
-
-export default alertIcon;

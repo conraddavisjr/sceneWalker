@@ -11,7 +11,7 @@ $cube-height: 400px
   height: 100vh
   position: fixed
   background-color: tan
-  z-index: 1
+  z-index: 2
 
 .interfaceOptions
   background-color: #1f1f1f
@@ -30,6 +30,15 @@ $cube-height: 400px
   left: 50%
   top: 50%
   background-color: gray
+
+.characterHat
+  width: 100px
+  height: 90px
+  position: absolute
+  transform: translate(-50%, -50%)
+  left: 50%
+  top: 27%
+  z-index: 1
 
 .optionsContainer
   display: flex
@@ -62,6 +71,21 @@ $cube-height: 400px
   height: 200vh
   width: 100%
 
+.copy-container
+  height: 200px
+  width: 300px
+  position: fixed
+  top: 20vh
+  left: 20vw
+  background-color: rgba(255, 255, 255, 0.12)
+  border: 2px solid rgba(255, 255, 255, 0.69)
+  color: white
+  font-size: 2em
+  z-index: 1
+
+.content
+  color: white
+
 .character
   position: absolute
   height: 150px
@@ -69,6 +93,8 @@ $cube-height: 400px
   top: 250px
   transform-origin: bottom
   background-color: gray
+  .characterHat
+    top: -60%
 
 .ground
   position: absolute
@@ -110,8 +136,9 @@ $cube-height: 400px
   width: auto
   height: 70px
   position: absolute
-  right: 13px
+  right: -27px
   top: -80px
+  z-index: 2
 
 .groundImpact
   position: absolute
