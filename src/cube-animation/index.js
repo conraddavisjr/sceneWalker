@@ -16,6 +16,8 @@ var characterHat = document.querySelector('.characterHat');
 var copyContainer = document.querySelector('.copy-container');
 var characterColorOption = document.querySelector('.characterBuilder .optionsContainer');
 var characterSelect = document.querySelector('.character-select');
+
+
 var mountainContainer = document.querySelector('.mountainContainer');
 var comet = document.querySelector('.comet');
 var alertIcon = document.querySelector('.alertIcon');
@@ -29,6 +31,8 @@ characterHat.innerHTML = svgCollection.wizardHat;
 
 var mountain = document.querySelector('.mountain');
 
+// temp obj name
+var starEleAll = document.querySelectorAll('.star')
 
 
 // 
@@ -48,21 +52,29 @@ var controller = new ScrollMagic.Controller();
 // character builder
 characterColorOption.addEventListener('click', (e) => {
 	character.style.backgroundColor = e.target.style.backgroundColor
+	console.log('characterColorOption Called - starEleAll: ', starEleAll)
+	Object.keys(starEleAll).map((index) => starEleAll[index].setAttribute('style', `fill: ${e.target.style.backgroundColor}`))
 });
 
 characterSelect.addEventListener('click', (e) => {
 	characterBuilder.style.display = 'none';
 	environment.classList.remove('hide-environment')
 });
-// var tween1 = new TimelineMax();
-// tween1.to(character, 1, { transform:"translateX(calc(50vw))" })
-// tween1.to(mountain, 1, { x:'-100vw' }, "-=1");
 
+character.addEventListener('click', (e) => {
+	console.log('e.target: ', e.target)
+	console.log('e.target.className: ', e.target.className)
+	switch (e.target.className) {
+		case 'character':
+			console.log('clicked character')
+			break;
+		case 'star':
+			console.log('clicked star')
+			break;
+	}
 
-// var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 1000 })
-//   .setTween(tween1) // trigger a TweenMax.to tween
-//   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-  // .addTo(controller);
+});
+
 
 // 
 // SCENE 1
@@ -74,12 +86,10 @@ tween1.to(copyContainer, 0.2, { opacity: 0 })
 tween1.to(character, 1, { transform:"translateX(calc(50vw))" }, "-=0.2")
 tween1.to(mountain, 1, { x:'-100vw' }, "-=1");
 
-
 var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 1000 })
   .setTween(tween1) // trigger a TweenMax.to tween
   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller);
-
 
 
 // 

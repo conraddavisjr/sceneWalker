@@ -8,8 +8,8 @@ $cube-height: 400px
 // Character Builder
 .characterBuilder
   width: 100vw
-  height: 100vh
   position: fixed
+  bottom: 0
   background-color: transparent
   z-index: 2
 
@@ -32,7 +32,7 @@ $cube-height: 400px
   background-color: gray
 
 .characterHat
-  width: 100px
+  width: 65px
   height: 90px
   position: absolute
   transform: translate(-50%, -50%)
@@ -107,8 +107,9 @@ $cube-height: 400px
   top: 250px
   transform-origin: bottom
   background-color: gray
+  border-radius: 20px 20px 0px 0px
   .characterHat
-    top: -60%
+    top: -28%
 
 .ground
   position: absolute
