@@ -10,7 +10,7 @@ $cube-height: 400px
   width: 100vw
   height: 100vh
   position: fixed
-  background-color: tan
+  background-color: transparent
   z-index: 2
 
 .interfaceOptions
@@ -63,6 +63,10 @@ $cube-height: 400px
   text-align: center
   cursor: pointer
 
+// 
+// SCENE CONTAINER
+// 
+
 #environment
   -webkit-perspective: 1000px
   perspective: 1000px
@@ -70,6 +74,16 @@ $cube-height: 400px
   background-color: #1b1b1b
   height: 200vh
   width: 100%
+  &.hide-environment
+    height: 100vh
+    background-color: tan
+    z-index: 1
+    &>:not(.character)
+      display: none
+    .character
+      transform: translate(-50%, -50%)
+      top: 50%
+      left: 50%
 
 .copy-container
   height: 200px

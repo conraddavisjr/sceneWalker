@@ -11,9 +11,8 @@ import svgCollection from './svgAssets/svgCollection';
 var environment = document.getElementById('environment');
 var camera = document.getElementById('camera');
 var characterBuilder = document.querySelector('.characterBuilder');
-var characterPreview = document.querySelector('.characterPreview');
 var character = document.querySelector('.character');
-var characterHat = document.querySelectorAll('.characterHat');
+var characterHat = document.querySelector('.characterHat');
 var copyContainer = document.querySelector('.copy-container');
 var characterColorOption = document.querySelector('.characterBuilder .optionsContainer');
 var characterSelect = document.querySelector('.character-select');
@@ -26,8 +25,7 @@ var sceneCopy = document.querySelector('.copy-container .content');
 
 // populate the scene
 mountainContainer.innerHTML = svgCollection.mountainSvg;
-characterHat[0].innerHTML = svgCollection.wizardHat;
-characterHat[1].innerHTML = svgCollection.wizardHat;
+characterHat.innerHTML = svgCollection.wizardHat;
 
 var mountain = document.querySelector('.mountain');
 
@@ -49,12 +47,12 @@ var controller = new ScrollMagic.Controller();
 
 // character builder
 characterColorOption.addEventListener('click', (e) => {
-	characterPreview.style.backgroundColor = e.target.style.backgroundColor
 	character.style.backgroundColor = e.target.style.backgroundColor
 });
 
 characterSelect.addEventListener('click', (e) => {
 	characterBuilder.style.display = 'none';
+	environment.classList.remove('hide-environment')
 });
 // var tween1 = new TimelineMax();
 // tween1.to(character, 1, { transform:"translateX(calc(50vw))" })
