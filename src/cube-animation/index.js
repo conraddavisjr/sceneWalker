@@ -12,6 +12,7 @@ var environment = document.getElementById('environment');
 var camera = document.getElementById('camera');
 var characterBuilder = document.querySelector('.characterBuilder');
 var character = document.querySelector('.character');
+var characterBody = document.querySelector('.characterBody');
 var characterHat = document.querySelector('.characterHat');
 var copyContainer = document.querySelector('.copy-container');
 var characterColorOption = document.querySelector('.characterBuilder .optionsContainer');
@@ -27,12 +28,17 @@ var sceneCopy = document.querySelector('.copy-container .content');
 
 // populate the scene
 mountainContainer.innerHTML = svgCollection.mountainSvg;
-characterHat.innerHTML = svgCollection.wizardHat;
+characterHat.innerHTML = svgCollection.headWear[0];
+characterBody.innerHTML = svgCollection.characterBody;
 
 var mountain = document.querySelector('.mountain');
 
 // temp obj name
-var starEleAll = document.querySelectorAll('.star')
+var headWearBase = document.querySelector('.headWearBase');
+var headWearDecoration = document.querySelectorAll('.headWearDecoration');
+
+// STATE
+let selectedItem = characterBody;
 
 
 // 
@@ -46,33 +52,37 @@ var starEleAll = document.querySelectorAll('.star')
 var controller = new ScrollMagic.Controller();
 
 // 
-// PROLOGUE
+// CHARACTER BUILDER
 // 
-
-// character builder
 characterColorOption.addEventListener('click', (e) => {
-	character.style.backgroundColor = e.target.style.backgroundColor
-	console.log('characterColorOption Called - starEleAll: ', starEleAll)
-	Object.keys(starEleAll).map((index) => starEleAll[index].setAttribute('style', `fill: ${e.target.style.backgroundColor}`))
+	// if there are multiples of the selected element, map through them and apply a fill
+	// otherwise, single-target the selected element
+	selectedItem.length
+	// update the color of the headWearDecoration
+	? Object.keys(selectedItem).map((index) => selectedItem[index].setAttribute('style', `fill: ${e.target.style.backgroundColor}`))
+	: selectedItem.setAttribute('style', `fill: ${e.target.style.backgroundColor}`)
+	
 });
 
+// complete the character build by clicking select button
 characterSelect.addEventListener('click', (e) => {
 	characterBuilder.style.display = 'none';
 	environment.classList.remove('hide-environment')
 });
 
+// track the element clicked on the character, so we can update its color
 character.addEventListener('click', (e) => {
-	console.log('e.target: ', e.target)
-	console.log('e.target.className: ', e.target.className)
-	switch (e.target.className) {
-		case 'character':
-			console.log('clicked character')
+	switch (e.target.classList.value) {
+		case 'characterBody':
+			selectedItem = characterBody
 			break;
-		case 'star':
-			console.log('clicked star')
+		case 'headWearDecoration':
+			selectedItem = headWearDecoration
+			break;
+		case 'headWearBase':
+			selectedItem = headWearBase
 			break;
 	}
-
 });
 
 
@@ -126,5 +136,4 @@ var scene3 = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 800 
   .setTween(tween3) // trigger a TweenMax.to tween
   .addIndicators({name: "3 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller);
-
 
