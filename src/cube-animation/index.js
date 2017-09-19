@@ -96,10 +96,10 @@ character.addEventListener('click', (e) => {
 // build tween1
 var tween1 = new TimelineMax()
 tween1.to(copyContainer, 0.2, { opacity: 0 })
-tween1.to(character, 1, { transform:"translateX(calc(50vw))" }, "-=0.2")
+tween1.to(character, 1 , { transform:"translateX(50vw) translateY(-75px)" }, "-=0.2")
 tween1.to(mountain, 1, { x:'-100vw' }, "-=1")
 
-var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 1000 })
+var scene1 = new ScrollMagic.Scene({ duration: 1000, offset: 700 })
   .setTween(tween1) // trigger a TweenMax.to tween
   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller)
@@ -119,7 +119,7 @@ tween2.to(character, 1, { transform:"translateX(72vw) scale(0.8) translateY(500p
 tween2.to(environment, 1, { transform:"translateY(-80vh)" }, "-=1")
 tween2.set(character, { opacity: 0, transform:"translateX(60vw) scale(1) translateY(0vh) rotate(-130deg)"})
 
-var scene2 = new ScrollMagic.Scene({ triggerElement: "#trigger2", duration: 500 })
+var scene2 = new ScrollMagic.Scene({ duration: 500, offset: 1650 })
   .setTween(tween2) // trigger a TweenMax.to tween
   .addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller)
@@ -135,7 +135,7 @@ tween3.to(sceneCopy, 0.5, {text:"It doesn't look like you're going to make it...
 tween3.to(copyContainer, 0.5, { opacity: 1 }, "-=0.3")
 tween3.to(character, 1, { opacity: 1, transform:"translateX(32vw) scale(1) translateY(80vh) rotate(-200deg)" }, "-=0.5")
 
-var scene3 = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 800 })
+var scene3 = new ScrollMagic.Scene({ duration: 800, offset: 2020 })
   .setTween(tween3) // trigger a TweenMax.to tween
   .addIndicators({name: "3 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller)
