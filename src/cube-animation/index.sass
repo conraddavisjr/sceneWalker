@@ -1,9 +1,6 @@
 @import '../../node_modules/play-web-core/sass/main'
 // @import '../../node_modules/play-web-core/sass/debug'
 
-$cube-width: 400px
-$cube-height: 400px
-
 // 
 // CHARACTER BUILDER
 // 
@@ -81,9 +78,9 @@ $cube-height: 400px
     &>:not(.character)
       display: none
     .character
-      transform: translate(-50%, -50%)
-      top: 50%
-      left: 50%
+      transform: translate(-50%, -50%) !important
+      top: 50% !important
+      left: 50% !important
 
 .copy-container
   height: 200px
@@ -104,8 +101,9 @@ $cube-height: 400px
   position: absolute
   height: 150px
   width: 90px
-  top: calc(50vh - 75px)
-  left: 10%
+  transform: translateY(calc(50vh - 150px)) translateX(3vw)
+  top: 0
+  left: 0
   transform-origin: bottom
   background-color: gray
   border-radius: 20px 20px 0px 0px
@@ -116,7 +114,7 @@ $cube-height: 400px
   position: absolute
   top: 50vh
   width: 100%
-      top: 50vh
+  top: 50vh
   background-color: green
   &:after
     content: ''
@@ -141,6 +139,7 @@ $cube-height: 400px
   z-index: -1
 
 .comet
+  position: absolute
   width: 90px
   height: 90px
   border-radius: 50%
@@ -166,5 +165,5 @@ $cube-height: 400px
 .brokenGround
   position: absolute
   height: 20px
-  left: 44vw
+  left: calc(60vw - 170px)
 

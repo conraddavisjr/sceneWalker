@@ -1,5 +1,9 @@
 // import Component from 'play-web-core/es6/component'
 
+
+const charWidth = 90
+const charHeight = 150
+
 // 
 // IMPORT SVG ASSETS
 // 
@@ -95,8 +99,10 @@ character.addEventListener('click', (e) => {
 
 // build tween1
 var tween1 = new TimelineMax()
+
+// tween1.set(character, { transform: "translateY(calc(50vh - 150px)) translateX(3vw)" })
 tween1.to(copyContainer, 0.2, { opacity: 0 })
-tween1.to(character, 1 , { transform:"translateX(50vw) translateY(-75px)" }, "-=0.2")
+tween1.to(character, 1 , { transform:`translateX(calc(50vw - ${charWidth / 2}px)) translateY(calc(50vh - 150px))` }, "-=0.2")
 tween1.to(mountain, 1, { x:'-100vw' }, "-=1")
 
 var scene1 = new ScrollMagic.Scene({ duration: 1000, offset: 700 })
