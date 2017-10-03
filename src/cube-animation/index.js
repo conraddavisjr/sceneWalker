@@ -1,5 +1,3 @@
-// import Component from 'play-web-core/es6/component'
-
 
 const charWidth = 90
 const charHeight = 150
@@ -100,12 +98,11 @@ character.addEventListener('click', (e) => {
 // build tween1
 var tween1 = new TimelineMax()
 
-// tween1.set(character, { transform: "translateY(calc(50vh - 150px)) translateX(3vw)" })
 tween1.to(copyContainer, 0.2, { opacity: 0 })
-tween1.to(character, 1 , { transform:`translateX(calc(50vw - ${charWidth / 2}px)) translateY(calc(50vh - 150px))` }, "-=0.2")
+tween1.to(character, 1 , { transform:`translateX(calc(60vw - ${charWidth}px))` }, "-=0.2")
 tween1.to(mountain, 1, { x:'-100vw' }, "-=1")
 
-var scene1 = new ScrollMagic.Scene({ duration: 1000, offset: 700 })
+var scene1 = new ScrollMagic.Scene({ duration: 1000, offset: 300 })
   .setTween(tween1) // trigger a TweenMax.to tween
   .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller)
@@ -118,14 +115,14 @@ var scene1 = new ScrollMagic.Scene({ duration: 1000, offset: 700 })
 // build tween2
 var tween2 = new TimelineMax()
 tween2.to(alertIcon, 0.1, {opacity: 1} )
-tween2.to(comet, 1, { transform:"translateX(60vw) translateY(400px)" }, "+=0.3")
+tween2.to(comet, 1, { y: 410 }, "+=0.3")
 tween2.to(groundImpact, 0, { opacity: 1}, "-=0.5")
 tween2.to(alertIcon, 0.1, {opacity: 0}, "-=0.2" )
 tween2.to(character, 1, { transform:"translateX(72vw) scale(0.8) translateY(500px) rotate(-190deg)", opacity: 0 }, "-=0.5")
 tween2.to(environment, 1, { transform:"translateY(-80vh)" }, "-=1")
 tween2.set(character, { opacity: 0, transform:"translateX(60vw) scale(1) translateY(0vh) rotate(-130deg)"})
 
-var scene2 = new ScrollMagic.Scene({ duration: 500, offset: 1650 })
+var scene2 = new ScrollMagic.Scene({ duration: 500, offset: 1450 })
   .setTween(tween2) // trigger a TweenMax.to tween
   .addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
   .addTo(controller)
@@ -137,7 +134,7 @@ var scene2 = new ScrollMagic.Scene({ duration: 500, offset: 1650 })
 
 // build tween3
 var tween3 = new TimelineMax()
-tween3.to(sceneCopy, 0.5, {text:"It doesn't look like you're going to make it... oh btw, 63% of women game on mobile."})
+tween3.to(sceneCopy, 0.5, {text:"Lorem Ipsum"})
 tween3.to(copyContainer, 0.5, { opacity: 1 }, "-=0.3")
 tween3.to(character, 1, { opacity: 1, transform:"translateX(32vw) scale(1) translateY(80vh) rotate(-200deg)" }, "-=0.5")
 

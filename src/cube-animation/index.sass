@@ -86,7 +86,7 @@
   height: 200px
   width: 300px
   position: fixed
-  top: 20vh
+  top: 160px
   left: 20vw
   background-color: rgba(255, 255, 255, 0.12)
   border: 2px solid rgba(255, 255, 255, 0.69)
@@ -101,8 +101,8 @@
   position: absolute
   height: 150px
   width: 90px
-  transform: translateY(calc(50vh - 150px)) translateX(3vw)
-  top: 0
+  // transform: translateY(calc(50vh - 150px)) translateX(3vw)
+  top: calc(410px - 150px)
   left: 0
   transform-origin: bottom
   background-color: gray
@@ -114,7 +114,7 @@
   position: absolute
   top: 50vh
   width: 100%
-  top: 50vh
+  top: 410px
   background-color: green
   &:after
     content: ''
@@ -143,7 +143,7 @@
   width: 90px
   height: 90px
   border-radius: 50%
-  transform: translateX(60vw)
+  left: 60vw
   background-color: rgb(243, 242, 240)
 
 .alertIcon
@@ -158,7 +158,7 @@
 .groundImpact
   position: absolute
   width: 170px
-  left: 57vw
+  left: calc(60vw - 35px)
   top: -37px
   opacity: 0
 

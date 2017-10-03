@@ -41,13 +41,6 @@ const svgCollection = {
 				<path id="star_1_" class="headWearDecoration" d="M30.5 80l-6.3-.5-4 4.9-1.5-6.2-5.8-2.3 5.4-3.2.3-6.3 4.8 4.1 6.1-1.6-2.4 5.8z"/>
 			</g>
 		</svg>
-		`,
-		`
-		<svg id="fittedHat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 42.5">
-			<style>.headWearBase{fill:#494949;} .headWearDecoration{fill:#232323;}</style>
-			<path class="headWearBase" d="M30.2 0h37.2c8.3 0 15.1 6.8 15.1 15.1v27.4h-58V5.7C24.5 2.5 27 0 30.2 0z"/>
-			<path class="headWearDecoration" d="M0 36h47.5v6.5H0z"/>
-		</svg>
 		`
 	],
 
